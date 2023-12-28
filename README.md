@@ -22,7 +22,8 @@
 ![screenshot](https://github.com/nowak0x01/WPXStrike/assets/96009982/c9cd4b27-e93d-4e90-bd69-b10c0fe36e60)
 
 ## About
-_**WPXStrike**_ is a script designed to escalate a **Cross-Site Scripting (XSS)** vulnerability to **Remote Code Execution (RCE)** or other's criticals vulnerabilities in WordPress.
+_**WPXStrike**_ is a script designed to escalate a **Cross-Site Scripting (XSS)** vulnerability to **Remote Code Execution (RCE)** or other's criticals vulnerabilities in WordPress.<br><br>
+🌍 **This script provides support for **Wordpress** **Versions** **6.X.X**, **5.X.X** and **4.X.X**.** 🌟
 
 ## Key Features
 
