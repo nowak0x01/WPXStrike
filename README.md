@@ -19,7 +19,10 @@
   <a href="#contributing">Contributing</a>
 </p>
 
-![screenshot](https://github.com/nowak0x01/WPXStrike/assets/96009982/c9cd4b27-e93d-4e90-bd69-b10c0fe36e60)
+
+![3](https://github.com/nowak0x01/WPXStrike/assets/96009982/235613e8-79a7-4e66-9166-47efb5b60ceb)
+
+
 
 ## About
 _**WPXStrike**_ is a script designed to escalate a **Cross-Site Scripting (XSS)** vulnerability to **Remote Code Execution (RCE)** or other's criticals vulnerabilities in WordPress.<br><br>
